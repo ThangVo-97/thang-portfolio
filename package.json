@@ -1,0 +1,33 @@
+{
+  "name": "thang-vo-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio of Vo Dinh Thang – Full-stack Developer",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "serve out -l 4173",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "5.2.7",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.18.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "10.15.0",
+    "eslint-config-next": "16.4.6",
+    "serve": "14.2.8",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

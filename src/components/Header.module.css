@@ -1,0 +1,152 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-height);
+  background: rgba(11, 13, 23, 0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo:hover {
+  color: var(--navy);
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.nav .cv {
+  padding: 8px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+}
+
+.nav .cv:hover {
+  background: var(--accent);
+  color: var(--navy);
+}
+
+.menuButton {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.bars,
+.bars::before,
+.bars::after {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.bars {
+  top: 50%;
+}
+
+.bars::before,
+.bars::after {
+  content: "";
+}
+
+.bars::before {
+  top: -6px;
+}
+
+.bars::after {
+  top: 6px;
+}
+
+.bars[data-open="true"] {
+  background: transparent;
+}
+
+.bars[data-open="true"]::before {
+  transform: translateX(-50%) translateY(6px) rotate(45deg);
+}
+
+.bars[data-open="true"]::after {
+  transform: translateX(-50%) translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav[data-open="true"] {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 20px 16px;
+  }
+
+  .nav li a {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .nav .cv {
+    margin-top: 8px;
+    text-align: center;
+  }
+}

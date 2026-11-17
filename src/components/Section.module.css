@@ -1,0 +1,25 @@
+.section {
+  padding: 88px 0 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: 6px;
+  margin-bottom: 32px;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding-top: 64px;
+  }
+}
